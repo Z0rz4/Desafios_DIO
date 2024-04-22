@@ -7,3 +7,5 @@ while(contador < array.length){
     console.log(array[contador]);
     contador++;
 }
+
+/*isto foi um teste de commit*/
