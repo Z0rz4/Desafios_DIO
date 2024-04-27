@@ -1,30 +1,40 @@
-let vitorias = 101;
-let derrotas = 10;
-const {Total, nivel} = Vitorias_E_Derrotas(vitorias, derrotas);
-
-
-function Vitorias_E_Derrotas(vitorias, derrotas){
-let Total = vitorias - derrotas;
-let nivel;
-if(Total <= 10){
-    nivel = "ferro";
-} else if(Total <= 20){
-    nivel = "bronze";
-} else if(Total <= 50){
-    nivel = "prata";
-} else if(Total <= 80){
-    nivel = "ouro";
-} else if(Total <= 90){
-    nivel = "Platina";
-} else if(Total <= 100){
-    nivel = "lendário";
-} else if(Total > 100){
-    nivel = "Imortal";
-} else {
-    console.log("Erro");
+let vitorias = 100;
+let derrotas = 9;
+let Kda = Vitorias_E_Derrotas(vitorias,derrotas);
+let nivel = Calculanivel(Kda);
+function Calculanivel(Total){
+    let nivel;
+    switch(true) {
+        case Total <= 10:
+            nivel = "ferro";
+            break;
+        case Total <= 20:
+            nivel = "bronze";
+            break;
+        case Total <= 50:
+            nivel = "prata";
+            break;
+        case Total <= 80:
+            nivel = "ouro";
+            break;
+        case Total <= 90:
+            nivel = "Platina";
+            break;
+        case Total <= 100:
+            nivel = "lendário";
+            break;
+        case Total > 100:
+            nivel = "Imortal";
+            break;
+        default:
+            console.log("Erro");
+    }
+    return nivel;
 }
 
-return {Total, nivel};
+function Vitorias_E_Derrotas(vitorias,derrotas){
+    let total = vitorias - derrotas;
+    return total;
 }
 
-console.log(`O heroi tem saldo de ${Total} e seu nivel está em ${nivel}`);
+console.log(`O heroi tem saldo de ${Kda} e seu nivel está em ${nivel}`);
